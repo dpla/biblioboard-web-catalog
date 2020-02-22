@@ -1,0 +1,37 @@
+{
+  "name": "dpla-biblioboard-web-catalog",
+  "version": "0.0.1",
+  "description": "Web Catalog for displaying Biblioboard content available in the DPLA Exchange",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dpla/biblioboard-web-catalog.git"
+  },
+  "author": "DPLA",
+  "license": "Apache-2.0",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "cp src/index.html lib/index.html && webpack",
+    "start": "NODE_ENV=production node index.js"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "opds-web-client": "^0.3.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "@types/react": "^16.9.22",
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}

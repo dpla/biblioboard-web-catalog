@@ -1,0 +1,84 @@
+$pagecolorlight: #f8f4ed;
+
+$dpla1: #0a2a37;
+$dpla2: #163f51;
+$dpla3: #006d84;
+
+$linkcolor: $dpla3;
+$pagetextcolor: $dpla1;
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "node_modules/opds-web-client/lib/stylesheets/app.scss";
+
+.dpla-header {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: white;
+
+  &:nth-of-type(2) {
+    background-color: $dpla1;
+  }
+
+  &:nth-of-type(3) {
+    background-color: $dpla2;
+    padding: 0.4rem;
+  }
+
+  &:nth-of-type(4) {
+    background-color: $dpla3;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  ul {
+    display: flex;
+    text-transform: uppercase;
+    list-style: none;
+    margin-bottom: 0px;
+    padding-left: 0px;
+
+    li {
+      margin-right: 0.75rem;
+    }
+  }
+
+  ul:last-of-type {
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  a, a:visited, a:hover {
+    color: white;
+  }
+
+  svg {
+    fill: white;
+  }
+
+  .divider {
+    display: inline-block;
+    height: 20px;
+    width: 1px;
+    background-color: rgba(255,255,255,0.6);
+    margin-right: 0.75rem;
+  }
+}
+
+/* BiblioBoard's feed has search, but I believe it searches all their content, not just the DPLA catalogs. */
+.search {
+  display: none;
+}
+
+/* Not applicable for this catalog since it's only for browsing. */
+.circulation-links {
+  display: none;
+}
+
+/* This is a bug in opds-web-client - the background-color seems to always be gray instead of the variable. */
+.breadcrumb {
+  background-color: $pagecolorlight;
+}
