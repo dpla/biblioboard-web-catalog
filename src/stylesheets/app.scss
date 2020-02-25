@@ -1,7 +1,7 @@
 $pagecolorlight: #f8f4ed;
 
-$dpla1: #0a2a37;
-$dpla2: #163f51;
+$dpla1: darken(#0d5876, 10%); //#0a2a37;
+$dpla2: #0d5876; //#127ea9; //#00b0f0; //#163f51;
 $dpla3: #006d84;
 
 $linkcolor: $dpla3;
@@ -81,4 +81,9 @@ $pagetextcolor: $dpla1;
 /* This is a bug in opds-web-client - the background-color seems to always be gray instead of the variable. */
 .breadcrumb {
   background-color: $pagecolorlight;
+}
+
+.logo {
+  height: 2.2rem;
+  width: 18rem;
 }
