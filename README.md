@@ -1,0 +1,5 @@
+This is a web-based catalog that displays BiblioBoard content that's available for purchase through the DPLA Exchange. It's meant to be temporary - ideally the content would be displayed in the Exchange itself, rather than on a separate site.
+
+It's based on Library Simplified's [OPDS web client](https://github.com/NYPL-Simplified/opds-web-client), with a few changes. It runs as a static site rather than using a server, and books are only available to browse, not read or download. It's set up to display a specific BiblioBoard's OPDS feed rather than any feed, and BiblioBoard controls the content. In addition, the catalog is not searchable, because BiblioBoard's search would likely search their whole catalog rather than content available from DPLA. The site also has a custom header loosely based on the DPLA Pro site, with links to other DPLA pages and to request a quote for a BiblioBoard collection.
+
+To set up the site, run `npm install` and `npm run build`, and then copy the `lib` directory to an S3 bucket configured to host a static site. All configuration is in this repo, since there's no sensitive information.
