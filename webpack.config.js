@@ -26,14 +26,22 @@ module.exports = {
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg).*$/,
-        loader: 'url-loader?limit=100000'
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 100000
+
+            }
+          }
+        ]
       }
     ],
   },
   plugins: [
     // jsdom is imported by opds-web-client, but causes errors
     // in the browser even if it is never used, so we ignore it:
-    new webpack.IgnorePlugin(/jsdom$/),
+    new webpack.IgnorePlugin({ resourceRegExp: /jsdom$/ }),
 
     // Separate CSS file.
     new MiniCssExtractPlugin({ filename: "[name].css" })

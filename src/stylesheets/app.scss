@@ -1,8 +1,11 @@
 $pagecolorlight: #f8f4ed;
 
+//3eb9e7 light blue
+//0068ff link color
+//2225ae hover color
 $dpla1: darken(#0d5876, 10%); //#0a2a37;
-$dpla2: #0d5876; //#127ea9; //#00b0f0; //#163f51;
-$dpla3: #006d84;
+$dpla2: #fff; //#0d5876; //#127ea9; //#00b0f0; //#163f51;
+$dpla3: #0068ff;
 
 $linkcolor: $dpla3;
 $pagetextcolor: $dpla1;
@@ -10,36 +13,29 @@ $pagetextcolor: $dpla1;
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "node_modules/opds-web-client/lib/stylesheets/app.scss";
 
+.site-header {
+  padding: 20px;
+  color: black;
+}
+
 .dpla-header {
   display: flex;
   align-items: center;
   padding: 0.25rem;
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
   line-height: 1.25;
-  color: white;
+  color: black;
+  background-color: white;
 
-  &:nth-of-type(2) {
-    background-color: $dpla1;
-  }
-
-  &:nth-of-type(3) {
-    background-color: $dpla2;
-    padding: 0.4rem;
-  }
-
-  &:nth-of-type(4) {
-    background-color: $dpla3;
-    padding: 0.5rem;
-    font-size: 1rem;
-  }
 
   ul {
     display: flex;
     text-transform: uppercase;
     list-style: none;
-    margin-bottom: 0px;
-    padding-left: 0px;
+    margin-bottom: 0;
+    padding-left: 0;
 
     li {
       margin-right: 0.75rem;
@@ -52,7 +48,7 @@ $pagetextcolor: $dpla1;
   }
 
   a, a:visited, a:hover {
-    color: white;
+    color: black;
   }
 
   svg {
@@ -78,12 +74,15 @@ $pagetextcolor: $dpla1;
   display: none;
 }
 
-/* This is a bug in opds-web-client - the background-color seems to always be gray instead of the variable. */
-.breadcrumb {
-  background-color: $pagecolorlight;
+.breadcrumbs-or-search-wrapper {
+  display: none !important;
 }
 
 .logo {
   height: 2.2rem;
   width: 18rem;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
 }

@@ -3,6 +3,8 @@ const OPDSCatalog = require("opds-web-client");
 import { ActionsProvider } from "opds-web-client/lib/components/context/ActionsContext";
 import Config from "./config";
 import Header from "./Header";
+import DataFetcher from "opds-web-client/lib/DataFetcher";
+import ActionCreator from "opds-web-client/lib/actions";
 
 interface CatalogProps {
   match: {
@@ -18,7 +20,7 @@ const Catalog : React.FC<CatalogProps> = ({ match }) => {
   let pageTitleTemplate = (collectionTitle, bookTitle) => {
     let details = bookTitle || collectionTitle;
     return (
-      "Biblioboard | DPLA Exchange" + (details ? " - " + details : "")
+      "BiblioBoard Catalog" + (details ? " - " + details : "")
     );
   };
 
@@ -37,14 +39,15 @@ const Catalog : React.FC<CatalogProps> = ({ match }) => {
     collectionUrl = Config.OPDS_URL;
   }
 
+  const fetcher = new DataFetcher();
+  const actionsCreator = new ActionCreator(fetcher);
+
   return (
-    <ActionsProvider>
+    <ActionsProvider actions={actionsCreator} fetcher={fetcher}>
       <OPDSCatalog
         collectionUrl={collectionUrl}
         bookUrl={bookUrl}
         Header={Header}
-        //Footer={Footer}
-        // BookDetailsContainer={BookDetailsContainer}
         pageTitleTemplate={pageTitleTemplate}
       />
     </ActionsProvider>
