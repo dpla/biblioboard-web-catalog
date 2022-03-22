@@ -26,7 +26,7 @@ const Header : React.FC<HeaderProps> = ({ collectionTitle }) => {
           <li><a href={interestFormUrl}>Request a Quote</a></li>
         </ul>
       </div>
-      <div className="site-header"><h1>BibilioBoard Catalog</h1></div>
+      <div className="site-header"><h1>BiblioBoard Catalog</h1></div>
     </>
   );
 };
